@@ -1,2 +1,0 @@
-#!/bin/sh
-luajit ~/.config/eww/scripts/workspaces.lua

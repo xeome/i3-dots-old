@@ -1,0 +1,7 @@
+/** Basic config file **/
+
+configuration {
+  show-icons:         true;
+  icon-theme:         "Papirus";
+}
+@import "/home/xeome/.config/awesome/theme/sidebar.rasi"

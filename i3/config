@@ -55,13 +55,10 @@ bindsym $mod+Escape workspace back_and_forth
 bindsym $mod+Shift+c kill
 
 # brave
-bindsym $mod+q exec brave
+bindsym $mod+q exec firefox
 
 #sublime text
 bindsym $mod+s exec subl
-
-# discord
-bindsym $mod+d exec brave --app=https://discord.com/channels/@me
 
 # audio
 bindsym $alt+Up exec "pamixer -i 5"
@@ -114,7 +111,7 @@ bindsym $mod+f fullscreen toggle
 bindsym $mod+b exec "sh ~/Documents/emoji.sh &"
 
 
-bindsym $mod+l exec "/home/xeome/.local/bin/eww open-many bar"
+bindsym $mod+l exec "/home/xeome/.local/bin/eww open bar"
 bindsym $mod+x exec "/home/xeome/.local/bin/eww close-all"
 bindsym $mod+n exec "/home/xeome/.local/bin/eww reload"
 # change container layout (stacked, tabbed, toggle split)
@@ -126,7 +123,8 @@ bindsym $mod+n exec "/home/xeome/.local/bin/eww reload"
 bindsym $mod+Control+space floating toggle
 
 
-
+bindsym $mod+Down move scratchpad
+bindsym $mod+Up scratchpad show, floating disable
 
 
 # focus the child container
@@ -212,11 +210,11 @@ mode "resize" {
 #}
 
 # AUTO START UPS
-client.focused #c6c6c6 #1f1f1f #c6c6c6 #171a1f #171a1f
-client.focused_inactive #c6c6c6 #1f1f1f #c6c6c6 #171a1f #171a1f
-client.unfocused #c6c6c6 #1f1f1f #c6c6c6 #171a1f #171a1f
-client.urgent #c6c6c6 #1f1f1f #c6c6c6 #171a1f #171a1f
-client.placeholder #c6c6c6 #1f1f1f #c6c6c6 #171a1f #171a1f
+client.focused #c6c6c6 #1f1f1f #c6c6c6 #111111 #111111
+client.focused_inactive #c6c6c6 #1f1f1f #c6c6c6 #111111 #111111
+client.unfocused #c6c6c6 #1f1f1f #c6c6c6 #111111 #111111
+client.urgent #c6c6c6 #1f1f1f #c6c6c6 #111111 #111111
+client.placeholder #c6c6c6 #1f1f1f #c6c6c6 #111111 #111111
 client.background #1f1f1f
 
 #client.focused #c6c6c6 #1f1f1f #c6c6c6 #000000 #000000
@@ -225,16 +223,16 @@ client.background #1f1f1f
 #client.urgent #c6c6c6 #1f1f1f #c6c6c6 #000000 #000000
 #client.placeholder #c6c6c6 #1f1f1f #c6c6c6 #000000 #000000
 #client.background #1f1f1f
-for_window [class="^.*"] border pixel 2
+for_window [class="^.*"] border pixel 0
 new_window 1pixel
-exec picom
-exec eww daemon
-exec --no-startup-id nitrogen --restore
-exec /home/xeome/.local/bin/eww daemon
-exec /home/xeome/.local/bin/eww open bar
-exec /home/xeome/.local/bin/eww close-all
-exec /home/xeome/.local/bin/eww open bar
-#exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+#exec_always "~/.local/bin/compix -c ~/.compix.conf"
+#exec_always "xcompmgr -c -f -n -r 12.00 -o 0.75 -l -15.0 -t -15.0 -I 0.050 -O 0.06 -D 10.0"
+exec_always "xcompmgr -r 12.00 -o 0.75 -l -15.0 -t -15.0 -I 0.050 -O 0.06 -D 10.0 -c -C -f"
+exec nitrogen --restore
+#exec eww daemon
+#exec "xwinwrap -fs -ov -ni -- mpv -wid WID -loop ~/.config/wallpapers/forest.mp4 & disown"
+#exec /home/xeome/.local/bin/eww daemon
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 #exec_always --no-startup-id $HOME/.config/polybar/launch.sh --lantern
 exec pcmanfm -d
 set $inner_gaps 10
