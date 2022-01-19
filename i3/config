@@ -35,6 +35,7 @@ bindsym $mod+s exec subl
 bindsym $alt+Up exec "pamixer -i 5"
 bindsym $alt+Down exec "pamixer -d 5"
 
+
 # start rofi (a program launcher)
 bindsym $mod+r exec --no-startup-id "sh ~/.config/i3/menu &"
 
@@ -71,10 +72,10 @@ bindsym $mod+Down move scratchpad
 bindsym $mod+Up scratchpad show, floating disable
 
 # neovim editor
-bindsym $mod+n exec neovide
+bindsym $mod+d exec neovide
 
 # show status
-bindsym $mod+d exec "bash ~/.local/bin/status"
+bindsym $mod+n exec "bash ~/.local/bin/status"
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
@@ -151,7 +152,7 @@ new_window 1pixel
 #exec --no-startup-id tint2
 #exec_always "~/.local/bin/compix -c ~/.compix.conf"
 
-#exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec dunst &
 exec nitrogen --restore
 exec pcmanfm -d
