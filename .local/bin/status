@@ -1,0 +1,4 @@
+time=$(date  +"%H:%M")
+date=$(date +%d/%m/%Y)
+
+dunstify "$time  $date"
