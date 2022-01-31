@@ -28,9 +28,6 @@ bindsym $mod+Shift+c kill
 # browser
 bindsym $mod+q exec chromium
 
-#sublime text
-bindsym $mod+s exec subl
-
 # audio
 bindsym $alt+Up exec "pamixer -i 5"
 bindsym $alt+Down exec "pamixer -d 5"
@@ -74,8 +71,14 @@ bindsym $mod+Up scratchpad show, floating disable
 # neovim editor
 bindsym $mod+d exec neovide
 
+# toggle bar
+bindsym $mod+n exec "polybar-msg cmd toggle"
+
+#test
+bindsym $mod+s layout stacking
+
 # show status
-bindsym $mod+n exec "bash ~/.local/bin/status"
+# bindsym $mod+n exec "bash ~/.local/bin/status"
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
@@ -120,29 +123,29 @@ bindsym $mod+Shift+r restart
 bindsym $mod+Shift+q exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
 # zoom to area
-bindsym $mod+w exec xzoom
+bindsym $mod+w exec boomer
 
 #################################
 #            Options            #
 #################################
 
 #border_radius 3
-#smart_borders on
-#smart_gaps on
+smart_borders on
+smart_gaps on
 set $inner_gaps 10
-set $outer_gaps 10
+set $outer_gaps 0
 gaps inner $inner_gaps
 gaps outer $outer_gaps
 for_window [title="xzoom"] floating enable
 
-client.focused #c6c6c6 #1f1f1f #c6c6c6 #53e2ae #53e2ae
-client.focused_inactive #c6c6c6 #1f1f1f #c6c6c6 #53e2ae #53e2ae
-client.unfocused #c6c6c6 #1f1f1f #c6c6c6 #53e2ae #53e2ae
-client.urgent #c6c6c6 #1f1f1f #c6c6c6 #53e2ae #53e2ae
-client.placeholder #c6c6c6 #1f1f1f #c6c6c6 #53e2ae #53e2ae
+client.focused #c6c6c6 #1f1f1f #c6c6c6 #E0E0E0 #E0E0E0  
+client.focused_inactive #c6c6c6 #1f1f1f #c6c6c6 #53e2ae #E0E0E0 
+client.unfocused #c6c6c6 #1f1f1f #c6c6c6 #E0E0E0  #E0E0E0  
+client.urgent #c6c6c6 #1f1f1f #c6c6c6 #E0E0E0  #E0E0E0 
+client.placeholder #c6c6c6 #1f1f1f #c6c6c6 #E0E0E0 #E0E0E0  
 client.background #1f1f1f
 
-for_window [class="^.*"] border pixel 0
+for_window [class="^.*"] border pixel 1
 new_window 1pixel
 
 #################################
@@ -155,7 +158,9 @@ new_window 1pixel
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec dunst &
 exec nitrogen --restore
+exec lxsession & 
 exec pcmanfm -d
+#exec "nemo -n"
 exec_always picom
 
 #exec_always "~/.local/bin/compix -c ~/.config/compix.conf"
