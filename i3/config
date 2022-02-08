@@ -131,7 +131,7 @@ bindsym $mod+w exec boomer
 
 #border_radius 3
 smart_borders on
-smart_gaps on
+#smart_gaps on
 set $inner_gaps 10
 set $outer_gaps 0
 gaps inner $inner_gaps
@@ -145,7 +145,7 @@ client.urgent #c6c6c6 #1f1f1f #c6c6c6 #E0E0E0  #E0E0E0
 client.placeholder #c6c6c6 #1f1f1f #c6c6c6 #E0E0E0 #E0E0E0  
 client.background #1f1f1f
 
-for_window [class="^.*"] border pixel 1
+for_window [class="^.*"] border pixel 0
 new_window 1pixel
 
 #################################
