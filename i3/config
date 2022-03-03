@@ -5,6 +5,8 @@
 set $mod Mod4
 set $alt Mod1
 
+set $exec_i3_groups exec --no-startup-id i3-workspace-groups
+
 font pango:Source Code Pro Semi-Bold 8
 
 # Use Mouse+$mod to drag floating windows to their wanted position
@@ -17,7 +19,7 @@ bindsym $mod+Return exec kitty
 bindsym Print exec "flameshot gui"
 
 #pcmanfm
-bindsym $mod+e exec pcmanfm
+bindsym $mod+e exec thunar
 
 #workspace go back thing
 bindsym $mod+Escape workspace back_and_forth
@@ -69,16 +71,16 @@ bindsym $mod+Down move scratchpad
 bindsym $mod+Up scratchpad show, floating disable
 
 # neovim editor
-bindsym $mod+d exec neovide
+bindsym $mod+d exec "neovide --multigrid"
 
 # toggle bar
 bindsym $mod+n exec "polybar-msg cmd toggle"
 
 #test
-bindsym $mod+s layout stacking
+bindsym $mod+w exec "~/.local/bin/i3-switch-active-workspace-group"
 
 # show status
-# bindsym $mod+n exec "bash ~/.local/bin/status"
+bindsym $mod+a exec "bash ~/.local/bin/status"
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
@@ -93,29 +95,29 @@ set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10"
 
-# switch to workspace
-bindsym $mod+1 workspace number $ws1
-bindsym $mod+2 workspace number $ws2
-bindsym $mod+3 workspace number $ws3
-bindsym $mod+4 workspace number $ws4
-bindsym $mod+5 workspace number $ws5
-bindsym $mod+6 workspace number $ws6
-bindsym $mod+7 workspace number $ws7
-bindsym $mod+8 workspace number $ws8
-bindsym $mod+9 workspace number $ws9
-bindsym $mod+0 workspace number $ws10
 
-# move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace number $ws1
-bindsym $mod+Shift+2 move container to workspace number $ws2
-bindsym $mod+Shift+3 move container to workspace number $ws3
-bindsym $mod+Shift+4 move container to workspace number $ws4
-bindsym $mod+Shift+5 move container to workspace number $ws5
-bindsym $mod+Shift+6 move container to workspace number $ws6
-bindsym $mod+Shift+7 move container to workspace number $ws7
-bindsym $mod+Shift+8 move container to workspace number $ws8
-bindsym $mod+Shift+9 move container to workspace number $ws9
-bindsym $mod+Shift+0 move container to workspace number $ws10
+bindsym $mod+1 exec "~/.local/bin/i3-workspace-groups workspace-number 1"
+bindsym $mod+2 exec "~/.local/bin/i3-workspace-groups workspace-number 2"
+bindsym $mod+3 exec "~/.local/bin/i3-workspace-groups workspace-number 3"
+bindsym $mod+4 exec "~/.local/bin/i3-workspace-groups workspace-number 4"
+bindsym $mod+5 exec "~/.local/bin/i3-workspace-groups workspace-number 5"
+bindsym $mod+6 exec "~/.local/bin/i3-workspace-groups workspace-number 6"
+bindsym $mod+7 exec "~/.local/bin/i3-workspace-groups workspace-number 7"
+bindsym $mod+8 exec "~/.local/bin/i3-workspace-groups workspace-number 8"
+bindsym $mod+9 exec "~/.local/bin/i3-workspace-groups workspace-number 9"
+bindsym $mod+0 exec "~/.local/bin/i3-workspace-groups workspace-number 10"
+
+bindsym $mod+Shift+1 exec "~/.local/bin/i3-workspace-groups move-to-number 1"
+bindsym $mod+Shift+2 exec "~/.local/bin/i3-workspace-groups move-to-number 2"
+bindsym $mod+Shift+3 exec "~/.local/bin/i3-workspace-groups move-to-number 3"
+bindsym $mod+Shift+4 exec "~/.local/bin/i3-workspace-groups move-to-number 4"
+bindsym $mod+Shift+5 exec "~/.local/bin/i3-workspace-groups move-to-number 5"
+bindsym $mod+Shift+6 exec "~/.local/bin/i3-workspace-groups move-to-number 6"
+bindsym $mod+Shift+7 exec "~/.local/bin/i3-workspace-groups move-to-number 7"
+bindsym $mod+Shift+8 exec "~/.local/bin/i3-workspace-groups move-to-number 8"
+bindsym $mod+Shift+9 exec "~/.local/bin/i3-workspace-groups move-to-number 9"
+bindsym $mod+Shift+0 exec "~/.local/bin/i3-workspace-groups move-to-number 10"
+
 
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
@@ -123,14 +125,14 @@ bindsym $mod+Shift+r restart
 bindsym $mod+Shift+q exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
 # zoom to area
-bindsym $mod+w exec boomer
+bindsym $mod+s exec boomer
 
 #################################
 #            Options            #
 #################################
 
-#border_radius 3
-smart_borders on
+border_radius 12
+#smart_borders on
 #smart_gaps on
 set $inner_gaps 10
 set $outer_gaps 0
@@ -138,11 +140,11 @@ gaps inner $inner_gaps
 gaps outer $outer_gaps
 for_window [title="xzoom"] floating enable
 
-client.focused #c6c6c6 #1f1f1f #c6c6c6 #E0E0E0 #E0E0E0  
-client.focused_inactive #c6c6c6 #1f1f1f #c6c6c6 #53e2ae #E0E0E0 
-client.unfocused #c6c6c6 #1f1f1f #c6c6c6 #E0E0E0  #E0E0E0  
-client.urgent #c6c6c6 #1f1f1f #c6c6c6 #E0E0E0  #E0E0E0 
-client.placeholder #c6c6c6 #1f1f1f #c6c6c6 #E0E0E0 #E0E0E0  
+client.focused #c6c6c6 #1f1f1f #c6c6c6 #777777 #777777
+client.focused_inactive #c6c6c6 #1f1f1f #c6c6c6 #53e2ae #777777
+client.unfocused #c6c6c6 #1f1f1f #c6c6c6 #777777  #777777
+client.urgent #c6c6c6 #1f1f1f #c6c6c6 #777777  #777777
+client.placeholder #c6c6c6 #1f1f1f #c6c6c6 #777770 #777777
 client.background #1f1f1f
 
 for_window [class="^.*"] border pixel 0
@@ -155,13 +157,16 @@ new_window 1pixel
 #exec --no-startup-id tint2
 #exec_always "~/.local/bin/compix -c ~/.compix.conf"
 
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+#exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh --panels
+
 exec dunst &
 exec nitrogen --restore
-exec lxsession & 
-exec pcmanfm -d
+exec lxsession &
+exec thunar --daemon
+#exec pcmanfm -d
 #exec "nemo -n"
-exec_always picom
+exec_always picom --experimental-backends
 
 #exec_always "~/.local/bin/compix -c ~/.config/compix.conf"
 
