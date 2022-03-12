@@ -19,7 +19,7 @@ bindsym $mod+Return exec kitty
 bindsym Print exec "flameshot gui"
 
 #pcmanfm
-bindsym $mod+e exec thunar
+bindsym $mod+e exec pcmanfm-qt
 
 #workspace go back thing
 bindsym $mod+Escape workspace back_and_forth
@@ -163,7 +163,7 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh --panels
 exec dunst &
 exec nitrogen --restore
 exec lxsession &
-exec thunar --daemon
+exec pcmanfm-qt -d
 #exec pcmanfm -d
 #exec "nemo -n"
 exec_always picom --experimental-backends
