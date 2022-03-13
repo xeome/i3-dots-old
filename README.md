@@ -3,6 +3,18 @@
 
 This is my personal repo for my Arch linux configurations.
 
+# dots
+
+**OS**:            Arch Linux  
+**WM**:            i3  
+**Bar**:           Polybar  
+**Launcher**:      Rofi  
+**Compositor**:    Picom  
+**Notifications**: Dunst  
+**Terminal**:      Kitty  
+**GTK**:           Colloid  
+**Icons**:         Papirus-dark  
+**Cursor**:        Adwaita  
     
 ## Screenshots
 
