@@ -11,7 +11,7 @@ This is my personal repo for my Arch linux configurations.
 **Notifications**:     Dunst  
 **Terminal**:          Kitty  
 **GTK**:               Colloid  
-**QT**:                Fluent Round Dark
+**QT**:                Fluent Round Dark  
 **Icons**:             Papirus-dark  
 **Cursor**:            Adwaita  
 **File manager**:      pcmanfm-qt  
