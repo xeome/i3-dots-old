@@ -36,8 +36,8 @@ bindsym $alt+Down exec "pamixer -d 5"
 
 
 # start rofi (a program launcher)
-bindsym $mod+r exec --no-startup-id "sh ~/.config/i3/menu &"
-
+#bindsym $mod+r exec --no-startup-id "sh ~/.config/i3/menu &"
+bindsym $mod+r exec "rofi -show drun"
 #switch workspaces with arrow keys
 bindsym $mod+Right workspace next
 bindsym $mod+Left workspace prev
@@ -77,7 +77,7 @@ bindsym $mod+d exec "neovide --multigrid"
 bindsym $mod+n exec "polybar-msg cmd toggle"
 
 #test
-bindsym $mod+w exec "i3-switch-active-workspace-group"
+bindsym $mod+w exec "~/.local/bin/i3-switch-active-workspace-group"
 
 # show status
 bindsym $mod+a exec "bash ~/.local/bin/status"

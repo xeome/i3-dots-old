@@ -1,11 +1,11 @@
 /*******************************************************************************
- * ROUNDED THEME FOR ROFI 
- * User                 : LR-Tech               
+ * ROUNDED THEME FOR ROFI
+ * User                 : LR-Tech
  * Theme Repo           : https://github.com/lr-tech/rofi-themes-collection
  *******************************************************************************/
 
 * {
-    bg0:    #171a1f;
+    bg0:    #171a1f7E;
     bg1:    #2A2A2A;
     bg2:    #3D3D3D80;
     bg3:    #1A73E8F2;
