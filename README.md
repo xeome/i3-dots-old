@@ -13,7 +13,7 @@ This is my personal repo for my Arch linux configurations.
 | Compositor            | `picom-git`                                            
 | Notifications         | `dunst`                                                
 | Terminal              | `kitty`                                                
-| GTK                   | `colloid`                                              
+| GTK                   | `Fluent Dark`                                              
 | QT                    | `Fluent Round Dark`                                    
 | Icons                 | `papirus-dark`                                         
 | Cursor                | `adwaita`                                              
